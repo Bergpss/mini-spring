@@ -27,7 +27,8 @@ import main.java.top.guoyibo.minispring.beans.factory.config.BeanDefinition;
          {
              return bean;
          }
-         return null;
+         BeanDefinition beanDefinition = getBeanDefinition(beanName);
+         return createBean(beanName, beanDefinition);
      }
 
      protected abstract Object createBean(String beanName, BeanDefinition beanDefinition) throws BeansException;
